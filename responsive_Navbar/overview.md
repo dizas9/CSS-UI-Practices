@@ -1,0 +1,1 @@
+<img align="center" src='res001.gif' width="700"/><br>
