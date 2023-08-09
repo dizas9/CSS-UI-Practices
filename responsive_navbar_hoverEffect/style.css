@@ -1,0 +1,113 @@
+
+/*``````````````Responsive Button and Checkbox`````````````````*/
+.nav .btn{
+    height:36px;
+    float:right;
+    margin-top:25px;
+    display: none;
+  }
+  
+  #nav-check{
+    display:none;
+  }
+  
+  /*`````````````````````````````````````````*/
+  *{
+    box-sizing: border-box;
+  }
+  hr{
+    display:none;
+  }
+  .nav{
+    height:40px;
+    width:100%;
+  }
+  
+  
+  .nav img,
+  .nav ul,
+  .nav li{
+    display: inline-block;
+  }
+  
+  .nav ul{
+    float: right;
+    padding-right: 70px;
+    padding-top:20px;
+  }
+  
+  .nav li{
+    padding-right: 10px;
+  }
+  .nav a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+    color: rgb(19, 186, 255);
+    position:relative;
+  }
+  
+  /*``````````````````````Hover effect`````````````````*/
+  .nav a:hover{
+    color: blue;
+  }
+  
+  .nav a::after{
+    content:'';
+    background-color:#ff004f;
+    width:0%;
+    height:1px;
+    left:0;
+    bottom:-4px;
+    position: absolute;
+    transition:0.5s;
+    
+  }
+  
+  .nav a:hover::after{
+    width:100%;
+  }
+  
+  .vertical-line{
+    border-right: 1px solid #ccc; /* Set the line style */
+    height: 32px; /* Set the height of the line */
+    margin: 0 auto; /* Center the line horizontally */
+  }
+  
+  
+  /*```````````````responsive Section``````````````````*/
+  @media (max-width: 600px){
+    hr{
+      display: block;
+    }
+    .nav .btn{
+      display: inline-block;
+      
+    }
+    
+    .nav .menu{
+      position: absolute;
+      display: block;
+      overflow-y: hidden;
+    }
+    
+    .nav li{
+      display:block;
+    }
+    
+    .vertical-line{
+      border-right: 0px solid #ccc; 
+    }
+    .nav #nav-check:checked ~ .menu{
+          height: calc(100vh - 50px);
+          overflow-y: auto;
+      }
+    
+    .nav #nav-check:not(:checked) ~ .menu{
+      height: 0px;
+    }
+  
+  }
+  
+  
+  
