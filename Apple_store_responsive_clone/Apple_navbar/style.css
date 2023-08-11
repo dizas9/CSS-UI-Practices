@@ -1,0 +1,125 @@
+* {
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+}
+body {
+  background-color: #fbfbfb;
+}
+#underline {
+  font-size: 14px;
+  vertical-align: bottom;
+  color: blue;
+  padding-left: 5px;
+}
+#underline:hover {
+  text-decoration: underline;
+}
+#sup {
+  font-size: 8.4px;
+  color: blue;
+}
+.nav {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.nav ul {
+  display: inline;
+}
+.nav li {
+  display: inline;
+  padding: 15px 0 0 35px;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.8);
+}
+.nav a {
+  text-decoration: none;
+  padding-left: 25px;
+}
+.nav svg {
+  vertical-align: middle;
+}
+.shop {
+  display: inline-block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+/*`````````responsive Menu toogle```````````````*/
+
+.toggle-btn {
+  float: right;
+  display: none;
+  margin-top: 10px;
+}
+#nav-check {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .toggle-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding-left: 15px;
+  }
+  .nav ul {
+    position: absolute;
+    display: block;
+    overflow-y: hidden;
+    padding-left: 0;
+  }
+  .nav li {
+    display: block;
+    font-size: 28px;
+    padding-left: 0;
+    text-align: left;
+    transition: 0.15s;
+    transform: translateY(-100%);
+  }
+  .nav li a {
+    color: rgb(0 0 0);
+  }
+  .nav .icons {
+    float: right;
+    padding-top: 4.5px;
+  }
+
+  .logo {
+    float: left;
+    height: 55px;
+  }
+  .shop{
+    height:100px;
+    text-align: center;
+  }
+
+  .shop p{
+    margin: 0;;
+    padding: 20px;
+  }
+
+  /*To show Unorder-lists*/
+  .nav #nav-check:checked ~ ul {
+    height: calc(1000vh - 1000px);
+  }
+
+  .nav #nav-check:not(:checked) ~ ul {
+    height: 0px;
+  }
+
+  /*To hide everything when checked*/
+  .nav #nav-check:checked ~ .icons,
+  .nav #nav-check:checked ~ .logo,
+  .nav #nav-check:checked ~ a {
+    display: none;
+  }
+
+  .nav #nav-check:checked ~ {
+    font-size: 18px;
+  }
+}
