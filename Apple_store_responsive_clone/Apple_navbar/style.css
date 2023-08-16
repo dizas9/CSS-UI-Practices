@@ -2,16 +2,20 @@
   font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
     sans-serif;
 }
+p {
+  margin: 0;
+  padding: 0;
+}
 body {
   background-color: #fbfbfb;
 }
-#underline {
+.underline {
   font-size: 14px;
   vertical-align: bottom;
   color: blue;
   padding-left: 5px;
 }
-#underline:hover {
+.underline:hover {
   text-decoration: underline;
 }
 #sup {
@@ -31,11 +35,12 @@ body {
   padding: 15px 0 0 35px;
   font-size: 12px;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.8);
 }
 .nav a {
   text-decoration: none;
   padding-left: 25px;
+  color: rgba(0, 0, 0, 0.8);
+  
 }
 .nav svg {
   vertical-align: middle;
@@ -49,7 +54,39 @@ body {
   text-align: center;
   background-color: #fff;
 }
+.shop-section {
+  display: grid;
+  grid-template-columns: 2fr 400px;
+  padding-top: 0;
+  margin-top: 40px;
+  height: 200px;
+}
+.shop-banner {
+  font-size: 45px;
+  font-weight: 600;
+  color: rgb(110, 110, 115);
+  width: 700px;
+  margin-top: 40px;
+  padding-left: 140px;
+}
+.chat-store {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin-right: 80px;
+}
 
+.chat-help {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  padding-top: 36px;
+}
+.chat-help img {
+  border-radius: 20px;
+}
+.chat-visit {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+}
 /*`````````responsive Menu toogle```````````````*/
 
 .toggle-btn {
@@ -61,7 +98,7 @@ body {
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 922px) {
   .toggle-btn {
     display: inline-block;
     margin-top: 15px;
@@ -72,14 +109,22 @@ body {
     display: block;
     overflow-y: hidden;
     padding-left: 0;
+    margin-top: 70px;
   }
   .nav li {
-    display: block;
+    display: inline-block;
     font-size: 28px;
     padding-left: 0;
+    width: 100%;
     text-align: left;
-    transition: 0.15s;
-    transform: translateY(-100%);
+  }
+  .nav li::after {
+    content: ">";
+    float: right;
+    display: none;
+  }
+  .nav li:hover::after {
+    display: block;
   }
   .nav li a {
     color: rgb(0 0 0);
@@ -93,13 +138,13 @@ body {
     float: left;
     height: 55px;
   }
-  .shop{
-    height:100px;
+  .shop {
+    height: 100px;
     text-align: center;
   }
 
-  .shop p{
-    margin: 0;;
+  .shop p {
+    margin: 0;
     padding: 20px;
   }
 
@@ -122,4 +167,23 @@ body {
   .nav #nav-check:checked ~ {
     font-size: 18px;
   }
+
+  /* ~~~~~~Shop Sextion Responsive~~~~~~~~~~~~~ */
+  .shop-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    width: 320px;
+    margin-top: 0;
+  }
+  .shop-banner {
+    width: 100%;
+    font-size: 32px;
+    padding-left: 0;
+    margin-left: 25px;
+  }
+  .chat-store{
+    margin-right: 0;
+    margin-left: 24px;
+  }
+  
 }
